@@ -143,6 +143,30 @@ const GlobalStyles = createGlobalStyle`
     filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
   }
 
+  /* Scroll-bar */
+
+ /* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: var(--color-grey-200)
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: var(--color-grey-400)
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-grey-500)
+}
+
+
   /*
   FOR DARK MODE
 
