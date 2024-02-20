@@ -4,9 +4,21 @@ import Select from "./Select";
 function SortBy({ options }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  function handleChange(e) {}
+  const sortBy = searchParams.get("sortBy") || "";
 
-  return <Select options={options} type="white" onChange={handleChange} />;
+  function handleChange(e) {
+    searchParams.set("sortBy", e.target.value);
+    setSearchParams(searchParams);
+  }
+
+  return (
+    <Select
+      options={options}
+      type="white"
+      value={sortBy}
+      onChange={handleChange}
+    />
+  );
 }
 
 export default SortBy;
