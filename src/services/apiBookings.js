@@ -9,7 +9,7 @@ export async function getBookings({ filter, sortBy }) {
     );
 
   // Filter
-  if (filter !== null) query.eq(filter.field, filter.value);
+  if (filter !== null) query[filter.method || "eq"](filter.field, filter.value);
 
   let { data, error } = await query;
 
